@@ -1,0 +1,56 @@
+not *(nao ) e avaliado primeiro
+seguido pelo and(e)
+e finalmente or (ou)
+******
+ordem dos operadores matematicosa (), **, */%,+-,
+*****
+passo abrtir, fechar e abrir um deles
+*********
+dois parametros do open:txt w
+
+*****
+range cria lista de 1 100
+****
+write(escreva)
+****8
+arquivo binary(foto,audio,musica)
+********
+r leiturA
+w escrita, apaga o conteudo se ja existir
+a escrita , mas preserva o conbteudo se ja existir
+b modo binarios
++ atualiza çao de escrita
+******
+xml,htm navegar para internet
+htm meta,div,h1,h2...,body
+propriedades html,name charset
+****
+json basicos: chaves atributos vslores
+boleanos listas
+******
+csv sao valores separados por virgula 
+em formato de planilha
+*****
+ler: reader
+escrever whiter
+****
+api e quando um palicativo cobversa com outro
+termo tecnico: interface de programacao 
+*****
+5 metodos de resquisicao:
+get(para vizualizar o objeto)
+put (para atualiza completo o  objeto)
+post (para inserir o objeto )
+patch(para atualiszar o objeto em parte)
+delete (para remopver o objeto)
+*******
+codigos de estado de http:
+200 ok
+400 solicitacao invalida
+404 recusro nao encontrado
+*****
+requests:
+fazerr pedidos (requisicoes)para sites
+enviar e receber dados para sites
+*******
+

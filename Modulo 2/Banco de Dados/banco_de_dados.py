@@ -22,4 +22,4 @@ try:
     con.commit()
 
 except ConnectionRefusedError as c:
-    print('erro de conecção com o banco.')
+    print('erro de conecção com o banco.')  

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloco De Notas do Miguel</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Container principal */
+        div {
+            background: #ffffffdd;
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+        }
+
+        /* Título */
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Lista de notas */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 25px;
+            text-align: left;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        li {
+            background: #e6f0ff;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            transition: background 0.3s;
+        }
+
+        li:hover {
+            background: #d1e0ff;
+        }
+
+        /* Campo de entrada */
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            border: 2px solid #66a6ff;
+            border-radius: 8px;
+            outline: none;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        input[type="text"]:focus {
+            border-color: #0057ff;
+        }
+
+        /* Botão salvar */
+        input[type="submit"] {
+            background: #66a6ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.1s;
+        }
+
+        input[type="submit"]:hover {
+            background: #4d8dff;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            {% for item in notas %}
+            <li> {{item}}</li>
+            {% endfor %}
+        </ul>
+        <form action="/" method = "POST">
+            <input type="text" placeholder="escreva sua anotação"id = "nota" name ="nota">
+
+            <input type="submit" value="SALVAR">
+        </form>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor de Dólar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* ===============================
+   style.css - Conversor de Dólar
+   =============================== */
+
+        :root {
+            --bg-color: #0f172a;
+            --card-color: #1e293b;
+            --text-color: #f1f5f9;
+            --muted-text: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --danger-color: #ef4444;
+            --radius: 12px;
+            --shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            --transition: all 0.25s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* ===== Container Principal ===== */
+        .container {
+            background-color: var(--card-color);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        /* ===== Título ===== */
+        h1 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        /* ===== Formulário ===== */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            text-align: left;
+            color: var(--muted-text);
+            font-size: 0.9rem;
+        }
+
+        input[type="number"] {
+            padding: 12px;
+            border: none;
+            border-radius: var(--radius);
+            background-color: #334155;
+            color: var(--text-color);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        input[type="number"]:focus {
+            background-color: #475569;
+            box-shadow: 0 0 0 2px var(--accent-color);
+        }
+
+        /* ===== Botão ===== */
+        button {
+            padding: 12px;
+            background-color: var(--accent-color);
+            color: #0f172a;
+            border: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        button:hover {
+            background-color: var(--accent-hover);
+            transform: scale(1.03);
+        }
+
+        /* ===== Resultado ===== */
+        .resultado {
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(56, 189, 248, 0.08);
+            border-radius: var(--radius);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .resultado h2 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .resultado p {
+            font-size: 1.4
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Conversor de Dólar → Real</h1>
+
+        <form method="get">
+            <label for="valor1">Valor em Dólar (USD):</label>
+            <input type="number" name="valor1" id="valor1" step="0.01" value="{{ valor1 or '' }}"
+                placeholder="Digite o valor...">
+            <button type="submit">Converter</button>
+        </form>
+
+        {% if resultado == "erro" %}
+        <div class="erro">
+            ⚠️ Erro: Digite um número válido.
+        </div>
+        {% elif resultado %}
+        <div class="resultado">
+            <h2>Resultado:</h2>
+            <p>R$ {{ '%.2f'|format(resultado) }}</p>
+        </div>
+        {% endif %}
+
+        <footer>💱 Cotação fixa usada: 1 USD = 5.29 BRL</footer>
+    </div>
+</body>
+
+</html>
